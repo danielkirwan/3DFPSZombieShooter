@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
+
         //mouseX camera movement
         //rotate left and right Y-axis both the below do the same thing
         //transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + mouseX, transform.localEulerAngles.z);
@@ -57,12 +58,16 @@ public class Player : MonoBehaviour
         Vector3 currentCameraRotation = camera.gameObject.transform.localEulerAngles;
         if (_invertY)
         {
-            currentCameraRotation.x += mouseY;
+            currentCameraRotation.x += mouseY * _cameraSensitivity;
+            currentCameraRotation.x = Mathf.Clamp(currentCameraRotation.x, 0f , 21.4f);
         }
         else
         {
-            currentCameraRotation.x -= mouseY;
+            currentCameraRotation.x -= mouseY * _cameraSensitivity;
+            currentCameraRotation.x = Mathf.Clamp(currentCameraRotation.x, 0f, 21.4f);
         }
+        //currentCameraRotation.x = Mathf.Clamp(currentCameraRotation.x, 21.4f, 13f);
+
         camera.gameObject.transform.localRotation = Quaternion.AngleAxis(currentCameraRotation.x, Vector3.right);
     }
 
