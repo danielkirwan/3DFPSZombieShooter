@@ -466,7 +466,7 @@ MonoBehaviour:
   _bloodSplatter: {fileID: 8729043021112652020, guid: 819c6268a8e154147984aa729b6f126b, type: 3}
   layer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 129
 --- !u!114 &307445568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1095,10 +1095,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1007938083, guid: 16f90c9f1c7fca944a98d7819b862a39, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 7038546904300643763, guid: 16f90c9f1c7fca944a98d7819b862a39, type: 3}
       propertyPath: m_Name
       value: Enemy

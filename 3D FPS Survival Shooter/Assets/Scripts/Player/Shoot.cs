@@ -29,7 +29,8 @@ public class Shoot : MonoBehaviour
                 if(health != null)
                 {
                     health.TakeDamage(20);
-                    Instantiate(_bloodSplatter, hit.point, Quaternion.LookRotation(hit.normal));
+                    GameObject bloodSplatter = Instantiate(_bloodSplatter, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(bloodSplatter, 2);
                 }
             }
         }
